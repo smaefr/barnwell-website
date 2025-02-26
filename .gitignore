@@ -1,0 +1,3 @@
+# ignore ds store (macos)
+
+.DS_Store
