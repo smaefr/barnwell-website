@@ -241,6 +241,135 @@
 				background-size: cover !important;
 				background-repeat: no-repeat !important;
 			}
+
+			.team-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+				padding: 1rem 0;
+			}
+
+			.team-card {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				overflow: hidden;
+				transition: transform 0.2s ease-in-out;
+			}
+
+			.team-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.team-member-image {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+			}
+
+			.team-member-info {
+				padding: 1.5rem;
+			}
+
+			.team-member-info h3 {
+				margin: 0 0 0.5rem 0;
+				font-family: 'Cinzel', serif;
+				font-size: 1.5rem;
+			}
+
+			.team-role {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 0.9rem;
+				margin: 0 0 1rem 0;
+			}
+
+			.team-bio {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			@media screen and (max-width: 736px) {
+				.team-grid {
+					gap: 1.5rem;
+				}
+
+				.team-member-image {
+					height: 250px;
+				}
+
+				.team-member-info {
+					padding: 1rem;
+				}
+			}
+
+			.horse-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				padding: 1rem 0;
+			}
+
+			.horse-card {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				overflow: hidden;
+				transition: transform 0.2s ease-in-out;
+			}
+
+			.horse-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.horse-image {
+				width: 100%;
+				height: 350px;
+				object-fit: cover;
+			}
+
+			.horse-info {
+				padding: 1.5rem;
+			}
+
+			.horse-info h3 {
+				margin: 0 0 1rem 0;
+				font-family: 'Cinzel', serif;
+				font-size: 1.5rem;
+			}
+
+			.horse-details {
+				font-size: 0.9rem;
+				line-height: 1.8;
+				margin: 0 0 1rem 0;
+			}
+
+			.detail-label {
+				color: rgba(255, 255, 255, 0.8);
+				font-weight: bold;
+				margin-right: 0.5rem;
+			}
+
+			.horse-bio {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				margin: 0;
+				color: rgba(255, 255, 255, 0.9);
+			}
+
+			@media screen and (max-width: 736px) {
+				.horse-grid {
+					gap: 1.5rem;
+				}
+
+				.horse-image {
+					height: 300px;
+				}
+
+				.horse-info {
+					padding: 1rem;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -271,19 +400,100 @@
 				<article id="about">
 					<h2 class="major">About Us</h2>
 					<span class="image main"><img src="images/pic01.jpg" alt="About Us" /></span>
-					<p>[About content goes here]</p>
+					<p>
+						Barnwell is proudly owned and operated by the Miller family at 96027 Skipper Lane. 
+						Carly Miller, along with John and Carol Woodmansee, bring decades of equestrian experience and passion to the barn. 
+						Our family-run operation is dedicated to providing top-notch care for our horses. 
+						When they're not busy with the horses, you might spot our two beloved cats, Kraken and Queenie, roaming the property.
+					</p>
 				</article>
 
 				<article id="horses">
 					<h2 class="major">Our Horses</h2>
-					<span class="image main"><img src="images/pic02.jpg" alt="Our Horses" /></span>
-					<p>[Horses content goes here]</p>
+					<div class="horse-grid">
+						<div class="horse-card">
+							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-info">
+								<h3>Ruby</h3>
+								<p class="horse-details">
+									<span class="detail-label">Breed:</span> Half-Chester<br>
+									<span class="detail-label">Age:</span> 12 years<br>
+									<span class="detail-label">Height:</span> 16.2 hands<br>
+									<span class="detail-label">Discipline:</span> Dog
+								</p>
+								<p class="horse-bio">Usually plays with chase</p>
+							</div>
+						</div>
+						<div class="horse-card">
+							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-info">
+								<h3>Adderonta</h3>
+								<p class="horse-details">
+									<span class="detail-label">Breed:</span> Slight Jerk<br>
+									<span class="detail-label">Age:</span> 8 years<br>
+									<span class="detail-label">Height:</span> 16 hands<br>
+									<span class="detail-label">Discipline:</span> Not really
+								</p>
+								<p class="horse-bio">Kind of an a-hole</p>
+							</div>
+						</div>
+						<div class="horse-card">
+							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-info">
+								<h3>Zilla</h3>
+								<p class="horse-details">
+									<span class="detail-label">Breed:</span> Complete Jerk<br>
+									<span class="detail-label">Age:</span> 8 years<br>
+									<span class="detail-label">Height:</span> 16 hands<br>
+									<span class="detail-label">Discipline:</span> None.
+								</p>
+								<p class="horse-bio">Do not get within 10 feet.</p>
+							</div>
+						</div>
+						<div class="horse-card">
+							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-info">
+								<h3>Titainia +1</h3>
+								<p class="horse-details">
+									<span class="detail-label">Breed:</span> Really pregnant<br>
+									<span class="detail-label">Age:</span> 8 years<br>
+									<span class="detail-label">Height:</span> 16 hands<br>
+									<span class="detail-label">Discipline:</span> Food
+								</p>
+								<p class="horse-bio">It's pregnant horse, idk</p>
+							</div>
+						</div>
+					</div>
 				</article>
 
 				<article id="team">
 					<h2 class="major">Our Team</h2>
-					<span class="image main"><img src="images/pic03.jpg" alt="Our Team" /></span>
-					<p>[Team content goes here]</p>
+					<div class="team-grid">
+						<div class="team-card">
+							<img src="images/pic01.jpg" alt="Carly Miller" class="team-member-image">
+							<div class="team-member-info">
+								<h3>Carly Miller</h3>
+								<p class="team-role">Good Looker</p>
+								<p class="team-bio">Lorem ipsum...</p>
+							</div>
+						</div>
+						<div class="team-card">
+							<img src="images/pic02.jpg" alt="John Woodmansee" class="team-member-image">
+							<div class="team-member-info">
+								<h3>John Woodmansee</h3>
+								<p class="team-role">that one guy nobody can get rid of</p>
+								<p class="team-bio">Lorem ipsum...</p>
+							</div>
+						</div>
+						<div class="team-card">
+							<img src="images/pic03.jpg" alt="Carol Woodmansee" class="team-member-image">
+							<div class="team-member-info">
+								<h3>Carol Woodmansee</h3>
+								<p class="team-role">Good Cooker</p>
+								<p class="team-bio">Lorem ipsum...</p>
+							</div>
+						</div>
+					</div>
 				</article>
 
 				<article id="schooling">
