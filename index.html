@@ -22,9 +22,15 @@
 				display: block;
 			}
 			
+			/* Remove extra spacing at the top */
+			#header {
+				padding: 1rem 0 0 0 !important; /* Reduced from default padding */
+			}
+			
 			/* Desktop spacing (default) */
 			#header .content img[src*="barnwell-top"] {
 				margin-bottom: -325px;
+				margin-top: -50px; /* Added negative top margin to pull image up */
 			}
 			
 			#header .content img[src*="barnwell-bottom"] {
@@ -42,10 +48,95 @@
 				font-size: 1.2rem;
 			}
 			
+			/* Reset all navigation styling to ensure consistent centering */
+			#header nav ul,
+			#header nav ul li,
+			#header nav ul li a,
+			#header nav ul li a span {
+				margin: 0 !important;
+				padding: 0 !important;
+				text-indent: 0 !important;
+				text-align: center !important;
+				letter-spacing: 0.05rem !important;
+			}
+			
+			/* Make all navigation tabs the same size */
+			#header nav ul {
+				display: flex !important;
+				justify-content: center !important;
+				align-items: stretch !important;
+				width: 100% !important;
+				padding: 0 !important;
+			}
+			
+			#header nav ul li {
+				flex: 1 !important;
+				margin: 0 5px !important;
+				min-width: 100px !important;
+				max-width: 130px !important;
+				border-left: none !important;
+				display: flex !important;
+				align-items: stretch !important;
+			}
+			
+			#header nav ul li a {
+				width: 100% !important;
+				display: flex !important;
+				justify-content: center !important;
+				align-items: center !important;
+				height: 2.75rem !important;
+				font-size: 0.85rem !important;
+				position: relative !important;
+				min-width: 0 !important;
+			}
+			
+			#header nav ul li a span {
+				display: block !important;
+				width: 100% !important;
+			}
+			
+			/* Fix for text centering in navigation buttons */
+			#header nav ul li a:before {
+				display: none !important;
+			}
+			
+			/* Responsive adjustments for navigation tabs */
+			@media screen and (max-width: 736px) {
+				#header nav ul li {
+					min-width: 80px;
+					margin: 0 3px !important;
+				}
+				
+				#header nav ul li a {
+					font-size: 0.8rem !important;
+				}
+			}
+			
+			@media screen and (max-width: 480px) {
+				#header nav ul {
+					flex-wrap: wrap;
+				}
+				
+				#header nav ul li {
+					flex: 0 0 calc(50% - 10px);
+					min-width: 0;
+					max-width: none;
+					margin: 5px !important;
+				}
+				
+				#header nav ul li a {
+					font-size: 0.75rem !important;
+				}
+			}
+			
 			/* Large tablet spacing (iPad Pro, etc.) */
 			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				#header {
+					padding: 0.75rem 0 0 0 !important;
+				}
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -210px !important;
+					margin-top: -30px !important;
 				}
 				#header .content img[src*="barnwell-bottom"] {
 					margin-top: -400px !important;
@@ -62,6 +153,7 @@
 			@media screen and (min-width: 768px) and (max-width: 980px) {
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -190px !important;
+					margin-top: -25px !important;
 				}
 				#header .content img[src*="barnwell-bottom"] {
 					margin-top: -380px !important;
@@ -76,8 +168,12 @@
 			
 			/* Small tablet spacing (iPad Mini, etc.) */
 			@media screen and (min-width: 481px) and (max-width: 767px) {
+				#header {
+					padding: 0.5rem 0 0 0 !important;
+				}
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -160px !important;
+					margin-top: -20px !important;
 				}
 				#header .content img[src*="barnwell-bottom"] {
 					margin-top: -300px !important;
@@ -98,8 +194,12 @@
 			
 			/* Mobile phone spacing */
 			@media screen and (max-width: 480px) {
+				#header {
+					padding: 0.25rem 0 0 0 !important;
+				}
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -100px !important;
+					margin-top: -15px !important;
 				}
 				#header .content img[src*="barnwell-bottom"] {
 					margin-top: -170px !important;
@@ -148,10 +248,11 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#about" style="text-align: center;"><span style="text-align: center; display: inline-block; width: 100%;">About Us</span></a></li>
+								<li><a href="#horses" style="text-align: center;"><span style="text-align: center; display: inline-block; width: 100%;">Our Horses</span></a></li>
+								<li><a href="#team" style="text-align: center;"><span style="text-align: center; display: inline-block; width: 100%;">Our Team</span></a></li>
+								<li><a href="#schooling" style="text-align: center;"><span style="text-align: center; display: inline-block; width: 100%;">Schooling</span></a></li>
+								<li><a href="#shows" style="text-align: center;"><span style="text-align: center; display: inline-block; width: 100%;">Shows</span></a></li>
 							</ul>
 						</nav>
 					</header>
@@ -160,15 +261,15 @@
 					<div id="main">
 
 						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
+							<article id="about">
+								<h2 class="major">About Us</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 							</article>
 
 						<!-- Work -->
-							<article id="work">
+							<article id="horses">
 								<h2 class="major">Work</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
@@ -176,14 +277,14 @@
 							</article>
 
 						<!-- About -->
-							<article id="about">
+							<article id="team">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
 								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
 							</article>
 
 						<!-- Contact -->
-							<article id="contact">
+							<article id="schooling">
 								<h2 class="major">Contact</h2>
 								<form method="post" action="#">
 									<div class="fields">
