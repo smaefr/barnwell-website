@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			@import url('https://fonts.bunny.net/css2?family=Cinzel:wght@400..900&display=swap');
+			
 			/* Styling for barnwell images to stretch across full screen */
 			#header .content img[src*="barnwell-top"],
 			#header .content img[src*="barnwell-bottom"] {
@@ -26,6 +28,12 @@
 			
 			#header .content img[src*="barnwell-bottom"] {
 				margin-top: -360px;
+			}
+			
+			/* Add Cinzel font styling for Barnwell heading */
+			#header .content .inner h1 {
+				font-family: 'Cinzel', serif;
+				font-weight: 600;
 			}
 			
 			/* Responsive styling for barnwell images */
@@ -79,9 +87,6 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
 						<div class="content" style="border-top: none; border-bottom: none;">
 							<img src="images/barnwell-top.png" alt="Barnwell top decoration" />
 							<div class="inner" style="padding-top: 0.25rem; padding-bottom: 0.25rem; margin: 0;">
@@ -97,7 +102,6 @@
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
 					</header>
