@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Dimension by HTML5 UP</title>
@@ -11,6 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Responsive styling for barnwell images */
+			@media screen and (max-width: 736px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -100px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -150px !important;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -70px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -100px !important;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
