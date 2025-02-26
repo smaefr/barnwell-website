@@ -22,12 +22,13 @@
 				display: block;
 			}
 			
+			/* Desktop spacing (default) */
 			#header .content img[src*="barnwell-top"] {
-				margin-bottom: -190px;
+				margin-bottom: -325px;
 			}
 			
 			#header .content img[src*="barnwell-bottom"] {
-				margin-top: -360px;
+				margin-top: -550px;
 			}
 			
 			/* Add Cinzel font styling for Barnwell heading */
@@ -36,7 +37,20 @@
 				font-weight: 600;
 			}
 			
-			/* Responsive styling for barnwell images */
+			/* Tablet spacing */
+			@media screen and (max-width: 980px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -200px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -350px !important;
+				}
+				#header .content .inner h1 {
+					font-size: 2.5rem !important;
+				}
+			}
+			
+			/* Small tablet/large phone spacing */
 			@media screen and (max-width: 736px) {
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -130px !important;
@@ -57,6 +71,8 @@
 					margin-bottom: 0.5rem !important;
 				}
 			}
+			
+			/* Mobile phone spacing */
 			@media screen and (max-width: 480px) {
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -100px !important;
