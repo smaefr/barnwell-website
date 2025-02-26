@@ -116,7 +116,7 @@
 			@media screen and (max-width: 736px) {
 				#header nav ul li {
 					min-width: 80px;
-					margin: 0 3px !important;
+					margin: 0 !important;
 				}
 				
 				#header nav ul li a {
@@ -126,18 +126,39 @@
 			
 			@media screen and (max-width: 480px) {
 				#header nav ul {
-					flex-wrap: wrap;
+					display: flex !important;
+					flex-direction: column !important;
+					flex-wrap: nowrap !important;
+					border: solid 1px #ffffff !important;
+					border-radius: 4px !important;
+					overflow: hidden !important;
+					width: 100% !important;
+					padding: 0 !important;
+					margin: 0 !important;
 				}
 				
 				#header nav ul li {
-					flex: 0 0 calc(50% - 10px);
-					min-width: 0;
-					max-width: none;
-					margin: 5px !important;
+					flex: 0 0 auto !important;
+					width: 100% !important;
+					min-width: 0 !important;
+					max-width: none !important;
+					margin: 0 !important;
+					padding: 0 !important;
+					box-sizing: border-box !important;
+					border-bottom: solid 1px #ffffff !important;
+				}
+				
+				#header nav ul li:last-child {
+					border-bottom: none !important;
 				}
 				
 				#header nav ul li a {
 					font-size: 0.75rem !important;
+					width: 100% !important;
+					height: 2.75rem !important;
+					display: flex !important;
+					justify-content: center !important;
+					align-items: center !important;
 				}
 			}
 			
