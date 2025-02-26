@@ -3,7 +3,7 @@
 	<head>
 		<title>Dimension by HTML5 UP</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
@@ -24,7 +24,7 @@
 			
 			/* Desktop spacing (default) */
 			#header .content img[src*="barnwell-top"] {
-				margin-bottom: -375px;
+				margin-bottom: -325px;
 			}
 			
 			#header .content img[src*="barnwell-bottom"] {
@@ -37,37 +37,53 @@
 				font-weight: 600;
 			}
 			
-			/* Tablet spacing */
-			@media screen and (max-width: 980px) {
+			/* Large tablet spacing (iPad Pro, etc.) */
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -200px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -400px !important;
+				}
+				#header .content .inner h1 {
+					font-size: 2.2rem !important;
+				}
+				#header .content .inner p {
+					font-size: 0.9rem !important;
+				}
+			}
+			
+			/* Medium tablet spacing (iPad, iPad Air) */
+			@media screen and (min-width: 768px) and (max-width: 980px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -180px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -380px !important;
+				}
+				#header .content .inner h1 {
+					font-size: 2rem !important;
+				}
+			}
+			
+			/* Small tablet spacing (iPad Mini, etc.) */
+			@media screen and (min-width: 481px) and (max-width: 767px) {
 				#header .content img[src*="barnwell-top"] {
 					margin-bottom: -150px !important;
 				}
 				#header .content img[src*="barnwell-bottom"] {
-					margin-top: -350px !important;
-				}
-				#header .content .inner h1 {
-					font-size: 2.5rem !important;
-				}
-			}
-			
-			/* Small tablet/large phone spacing */
-			@media screen and (max-width: 736px) {
-				#header .content img[src*="barnwell-top"] {
-					margin-bottom: -100px !important;
-				}
-				#header .content img[src*="barnwell-bottom"] {
-					margin-top: -200px !important;
+					margin-top: -300px !important;
 				}
 				#header .content .inner {
 					padding-top: 0.2rem !important;
 					padding-bottom: 0.2rem !important;
 				}
 				#header .content .inner h1 {
-					font-size: 2rem !important;
+					font-size: 1.8rem !important;
 					margin-bottom: 0.3rem !important;
 				}
 				#header .content .inner p {
-					font-size: 0.85rem !important;
+					font-size: 0.8rem !important;
 					margin-bottom: 0.5rem !important;
 				}
 			}
@@ -85,13 +101,23 @@
 					padding-bottom: 0.15rem !important;
 				}
 				#header .content .inner h1 {
-					font-size: 1.6rem !important;
+					font-size: 1.4rem !important;
 					margin-bottom: 0.2rem !important;
 				}
 				#header .content .inner p {
-					font-size: 0.75rem !important;
+					font-size: 0.7rem !important;
 					line-height: 1.3 !important;
 					margin-bottom: 0.6rem !important;
+				}
+			}
+			
+			/* Fix for iPad orientation change */
+			@media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+				#header .content img[src*="barnwell-top"] {
+					margin-bottom: -220px !important;
+				}
+				#header .content img[src*="barnwell-bottom"] {
+					margin-top: -420px !important;
 				}
 			}
 		</style>
