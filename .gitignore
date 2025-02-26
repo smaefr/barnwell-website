@@ -1,3 +1,6 @@
 # ignore ds store (macos)
 
 .DS_Store
+
+# ignore cursor rules
+.cursor
