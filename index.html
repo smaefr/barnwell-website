@@ -747,7 +747,7 @@
 				const searchInput = document.getElementById('blog-search-input');
 				const searchButton = document.getElementById('blog-search-button');
 				
-				const API_URL = 'http://127.0.0.1:8787/api/blog';
+				const API_URL = 'https://barnwell-blog-worker.admtech.us/api/blog';
 				
 				// Load all posts on page load
 				loadPosts();
@@ -862,7 +862,7 @@
 							</div>
 						</div>
 						
-						<img src="${post.image_url || 'images/default-blog.jpg'}" alt="${post.title}" class="post-image">
+						<img src="${post.image_url || 'images/default-blog.png'}" alt="${post.title}" class="post-image">
 						
 						<div class="post-content">
 							${post.content}
