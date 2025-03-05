@@ -839,7 +839,7 @@
 							return response.json();
 						})
 						.then(post => {
-							displaySinglePost(post);
+							displaySinglePost(post.data);
 						})
 						.catch(error => {
 							console.error('Error fetching post:', error);
