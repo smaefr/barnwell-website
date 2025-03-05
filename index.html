@@ -370,6 +370,193 @@
 					padding: 1rem;
 				}
 			}
+			
+			/* Blog styles */
+			.blog-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+			
+			.blog-card {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				overflow: hidden;
+				transition: transform 0.2s ease-in-out;
+				cursor: pointer;
+			}
+			
+			.blog-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.blog-image {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+			}
+			
+			.blog-card-content {
+				padding: 1.5rem;
+			}
+			
+			.blog-card-title {
+				font-family: 'Cinzel', serif;
+				font-size: 1.5rem;
+				margin: 0 0 0.5rem 0;
+			}
+			
+			.blog-meta {
+				display: flex;
+				justify-content: space-between;
+				color: rgba(255, 255, 255, 0.7);
+				font-size: 0.8rem;
+				margin-bottom: 1rem;
+			}
+			
+			.blog-excerpt {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				color: rgba(255, 255, 255, 0.9);
+			}
+			
+			.blog-search {
+				display: flex;
+				max-width: 600px;
+				margin: 0 auto;
+			}
+			
+			#blog-search-input {
+				flex: 1;
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				color: white;
+				padding: 0.7rem 1rem;
+				border-radius: 4px 0 0 4px;
+				font-family: inherit;
+			}
+			
+			#blog-search-button {
+				background: rgba(255, 255, 255, 0.2);
+				color: white;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				border-left: none;
+				padding: 0 1.5rem;
+				border-radius: 0 4px 4px 0;
+				cursor: pointer;
+				font-family: inherit;
+				transition: background 0.2s;
+			}
+			
+			#blog-search-button:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+			
+			/* Single post view */
+			.post-view {
+				display: none;
+			}
+			
+			.post-view.active-view {
+				display: block;
+			}
+			
+			#blog-list.active-view {
+				display: block;
+			}
+			
+			#blog-list {
+				display: none;
+			}
+			
+			.back-button {
+				background: rgba(255, 255, 255, 0.1);
+				color: white;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 0.15rem 0.6rem 2.6rem;
+				border-radius: 4px;
+				margin-bottom: 2rem;
+				cursor: pointer;
+				font-family: inherit;
+				font-size: 1.0rem;
+				font-weight: normal;
+				letter-spacing: 0.1em;
+				text-align: center;
+				display: inline-block;
+				width: 100px;
+				margin-left: 0;
+				margin-right: auto;
+				transition: background 0.2s;
+			}
+			
+			.back-button:hover {
+				background: rgba(255, 255, 255, 0.2);
+			}
+			
+			.post-header {
+				margin-bottom: 2rem;
+			}
+			
+			.post-title {
+				font-family: 'Cinzel', serif;
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			.post-meta {
+				display: flex;
+				justify-content: space-between;
+				color: rgba(255, 255, 255, 0.7);
+				font-size: 0.9rem;
+				margin-bottom: 1.5rem;
+			}
+			
+			.post-image {
+				width: 100%;
+				max-height: 500px;
+				object-fit: cover;
+				margin-bottom: 2rem;
+				border-radius: 8px;
+			}
+			
+			.post-content {
+				font-size: 1rem;
+				line-height: 1.8;
+			}
+			
+			.loading-indicator {
+				text-align: center;
+				grid-column: 1 / -1;
+				padding: 2rem;
+				color: rgba(255, 255, 255, 0.7);
+			}
+			
+			.no-posts {
+				text-align: center;
+				grid-column: 1 / -1;
+				padding: 3rem;
+				color: rgba(255, 255, 255, 0.7);
+			}
+			
+			@media screen and (max-width: 736px) {
+				.blog-grid {
+					gap: 1.5rem;
+				}
+				
+				.blog-card-content {
+					padding: 1rem;
+				}
+				
+				.blog-card-title {
+					font-size: 1.2rem;
+				}
+				
+				.post-title {
+					font-size: 1.8rem;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -508,7 +695,29 @@
 
 				<article id="corner">
 					<h2 class="major">Scary Corner</h2>
-					<p>[Scary Corner content goes here]</p>
+					
+					<div id="blog-container">
+						<!-- Blog listing view -->
+						<div id="blog-list" class="active-view">
+							<div class="blog-search">
+								<input type="text" id="blog-search-input" placeholder="Search posts...">
+								<button id="blog-search-button">Search</button>
+							</div>
+							
+							<div id="blog-posts-container" class="blog-grid">
+								<!-- Posts will be loaded here -->
+								<div class="loading-indicator">Loading posts...</div>
+							</div>
+						</div>
+						
+						<!-- Single post view -->
+						<div id="blog-post" class="post-view">
+							<button id="back-to-posts" class="back-button">&larr; Back</button>
+							<div id="post-content">
+								<!-- Single post will be loaded here -->
+							</div>
+						</div>
+					</div>
 				</article>
 			</div>
 
@@ -526,5 +735,163 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			// Blog functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				// Elements
+				const blogListContainer = document.getElementById('blog-list');
+				const blogPostContainer = document.getElementById('blog-post');
+				const postsContainer = document.getElementById('blog-posts-container');
+				const postContent = document.getElementById('post-content');
+				const backButton = document.getElementById('back-to-posts');
+				const searchInput = document.getElementById('blog-search-input');
+				const searchButton = document.getElementById('blog-search-button');
+				
+				const API_URL = 'http://127.0.0.1:8787/api/blog';
+				
+				// Load all posts on page load
+				loadPosts();
+				
+				// Event listeners
+				backButton.addEventListener('click', showPostsList);
+				searchButton.addEventListener('click', handleSearch);
+				searchInput.addEventListener('keypress', function(e) {
+					if (e.key === 'Enter') {
+						handleSearch();
+					}
+				});
+				
+				// Load blog posts from API
+				function loadPosts(searchTerm = null) {
+					postsContainer.innerHTML = '<div class="loading-indicator">Loading posts...</div>';
+					
+					let url = `${API_URL}?action=get_posts`;
+					if (searchTerm) {
+						url += `&search=${encodeURIComponent(searchTerm)}`;
+					}
+					
+					fetch(url)
+						.then(response => {
+							if (!response.ok) {
+								throw new Error('Network response was not ok');
+							}
+							return response.json();
+						})
+						.then(posts => {
+							displayPosts(posts);
+						})
+						.catch(error => {
+							console.error('Error fetching posts:', error);
+							postsContainer.innerHTML = `
+								<div class="no-posts">
+									<p>Failed to load posts. Please try again later.</p>
+								</div>
+							`;
+						});
+				}
+				
+				// Display posts in the grid
+				function displayPosts(posts) {
+					if (posts.length === 0) {
+						postsContainer.innerHTML = `
+							<div class="no-posts">
+								<p>No posts found. Check back later!</p>
+							</div>
+						`;
+						return;
+					}
+					
+					postsContainer.innerHTML = '';
+					
+					posts.forEach(post => {
+						const postElement = document.createElement('div');
+						postElement.className = 'blog-card';
+						postElement.innerHTML = `
+							<img src="${post.image_url || 'images/default-blog.jpg'}" alt="${post.title}" class="blog-image">
+							<div class="blog-card-content">
+								<h3 class="blog-card-title">${post.title}</h3>
+								<div class="blog-meta">
+									<span class="blog-date">${post.published_date}</span>
+									<span class="blog-category">${post.category}</span>
+								</div>
+								<p class="blog-excerpt">${post.excerpt}</p>
+							</div>
+						`;
+						
+						postElement.addEventListener('click', () => {
+							loadSinglePost(post.slug);
+						});
+						
+						postsContainer.appendChild(postElement);
+					});
+				}
+				
+				// Load a single post
+				function loadSinglePost(slug) {
+					postContent.innerHTML = '<div class="loading-indicator">Loading post...</div>';
+					showPostView();
+					
+					fetch(`${API_URL}?action=get_post&slug=${encodeURIComponent(slug)}`)
+						.then(response => {
+							if (!response.ok) {
+								throw new Error('Network response was not ok');
+							}
+							return response.json();
+						})
+						.then(post => {
+							displaySinglePost(post.data);
+						})
+						.catch(error => {
+							console.error('Error fetching post:', error);
+							postContent.innerHTML = `
+								<div class="no-posts">
+									<p>Failed to load post. Please try again later.</p>
+								</div>
+							`;
+						});
+				}
+				
+				// Display a single post
+				function displaySinglePost(post) {
+					postContent.innerHTML = `
+						<div class="post-header">
+							<h1 class="post-title">${post.title}</h1>
+							<div class="post-meta">
+								<span class="post-date">${post.published_date}</span>
+								<span class="post-category">${post.category}</span>
+							</div>
+						</div>
+						
+						<img src="${post.image_url || 'images/default-blog.jpg'}" alt="${post.title}" class="post-image">
+						
+						<div class="post-content">
+							${post.content}
+						</div>
+					`;
+				}
+				
+				// Show posts list view
+				function showPostsList() {
+					blogPostContainer.classList.remove('active-view');
+					blogListContainer.classList.add('active-view');
+				}
+				
+				// Show single post view
+				function showPostView() {
+					blogListContainer.classList.remove('active-view');
+					blogPostContainer.classList.add('active-view');
+				}
+				
+				// Handle search
+				function handleSearch() {
+					const searchTerm = searchInput.value.trim();
+					if (searchTerm) {
+						loadPosts(searchTerm);
+					} else {
+						loadPosts();
+					}
+				}
+			});
+		</script>
 	</body>
 </html>
