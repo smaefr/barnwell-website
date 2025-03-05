@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Barnwell - Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<style>
+			@import url('https://fonts.bunny.net/css2?family=Cinzel:wght@400..900&display=swap');
+			
+			#header {
+				padding: 1rem 0 0 0 !important;
+			}
+			
+			#header .content .inner h1 {
+				font-family: 'Cinzel', serif;
+				font-weight: 600;
+				font-size: 3.5rem;
+			}
+			
+			#header:before,
+			#header:after,
+			#header > *:before,
+			#header > *:after,
+			#header nav:before,
+			#header nav:after,
+			#wrapper:before,
+			#wrapper:after {
+				display: none !important;
+				border: none !important;
+				content: none !important;
+				background: none !important;
+				width: 0 !important;
+				height: 0 !important;
+			}
+			
+			/* Background image */
+			#bg:after {
+				background-image: url("../images/background.png") !important;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+			}
+
+			/* Login form styles */
+			#main {
+				display: block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+			}
+
+			.login-container {
+				max-width: 400px;
+				margin: 2rem auto;
+				padding: 2rem;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				opacity: 1 !important;
+				visibility: visible !important;
+			}
+
+			.login-form {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+			}
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			.form-group label {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 0.9rem;
+				font-family: 'Cinzel', serif;
+			}
+
+			.form-group input {
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 4px;
+				padding: 0.7rem 1rem;
+				color: white;
+				font-family: inherit;
+				width: 100%;
+				box-sizing: border-box;
+			}
+
+			.form-group input:focus {
+				outline: none;
+				border-color: rgba(255, 255, 255, 0.4);
+			}
+
+			.login-button {
+				background: rgba(255, 255, 255, 0.2);
+				color: white;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				padding: 0.8rem 0.8rem 3.0rem;
+				border-radius: 4px;
+				cursor: pointer;
+				font-family: 'Cinzel', serif;
+				font-size: 1rem;
+				transition: background 0.2s;
+				width: 100%;
+			}
+
+			.login-button:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			.error-message {
+				color: #ff6b6b;
+				font-size: 0.9rem;
+				text-align: center;
+				margin-top: 1rem;
+				display: none;
+			}
+
+			.back-link {
+				display: block;
+				text-align: center;
+				margin-top: 2rem;
+				color: rgba(255, 255, 255, 0.7);
+				text-decoration: none;
+				font-family: 'Cinzel', serif;
+				transition: color 0.2s;
+			}
+
+			.back-link:hover {
+				color: white;
+			}
+
+			@media screen and (max-width: 480px) {
+				.login-container {
+					margin: 1rem;
+					padding: 1.5rem;
+				}
+			}
+
+			/* Override any template styles that might hide content */
+			article {
+				opacity: 1 !important;
+				display: block !important;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<div class="content" style="border: none;">
+					<div class="inner" style="padding: 2rem 0;">
+						<h1 style="margin-bottom: 0.5rem;">Admin Login</h1>
+					</div>
+				</div>
+			</header>
+
+			<div id="main" style="display: block !important;">
+				<article style="opacity: 1 !important; display: block !important;">
+					<div class="login-container">
+						<form class="login-form" id="loginForm">
+							<div class="form-group">
+								<label for="username">Username</label>
+								<input type="text" id="username" name="username" required>
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label>
+								<input type="password" id="password" name="password" required>
+							</div>
+							<button type="submit" class="login-button">Login</button>
+							<div class="error-message" id="errorMessage"></div>
+						</form>
+						<a href="../" class="back-link">&larr; Back to Home</a>
+					</div>
+				</article>
+			</div>
+
+			<footer id="footer">
+				<p class="copyright">&copy; Barnwell</p>
+				<p class="copyright">Website by <a href="https://admtech.org">ADM Technology</a></p>
+			</footer>
+		</div>
+
+		<div id="bg"></div>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script>
+			// Ensure the form is visible when the page loads
+			window.addEventListener('load', function() {
+				document.getElementById('main').style.display = 'block';
+				document.getElementById('main').style.opacity = '1';
+			});
+
+			document.addEventListener('DOMContentLoaded', function() {
+				const loginForm = document.getElementById('loginForm');
+				const errorMessage = document.getElementById('errorMessage');
+				const API_URL = 'http://127.0.0.1:8787/api/auth';
+
+				loginForm.addEventListener('submit', async function(e) {
+					e.preventDefault();
+					
+					const username = document.getElementById('username').value;
+					const password = document.getElementById('password').value;
+					
+					try {
+						const response = await fetch(`${API_URL}?action=login`, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify({ username, password })
+						});
+						
+						const data = await response.json();
+						
+						if (response.ok && data.success) {
+							// Store the token securely
+							localStorage.setItem('authToken', data.data.token);
+
+							console.log(data);
+							// Redirect to admin area or desired page
+							window.location.href = '../admin/create-post.html';
+						} else {
+							errorMessage.textContent = 'Invalid username or password';
+							errorMessage.style.display = 'block';
+						}
+					} catch (error) {
+						console.error('Login error:', error);
+						errorMessage.textContent = 'An error occurred. Please try again later.';
+						errorMessage.style.display = 'block';
+					}
+				});
+			});
+		</script>
+	</body>
+</html> 
