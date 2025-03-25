@@ -322,10 +322,85 @@
 				transform: translateY(-5px);
 			}
 
-			.horse-image {
+			.horse-image-container {
+				position: relative;
 				width: 100%;
 				height: 350px;
+			}
+
+			.horse-image-slider {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.horse-image {
+				position: absolute;
+				width: 100%;
+				height: 100%;
 				object-fit: cover;
+				opacity: 0;
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			.horse-image.active {
+				opacity: 1;
+			}
+
+			.slider-arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background: rgba(0, 0, 0, 0.5);
+				color: white;
+				width: 3rem;
+				height: 3rem;
+				cursor: pointer;
+				z-index: 2;
+				border: none;
+				transition: background 0.2s;
+				font-size: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0;
+			}
+
+			.slider-arrow:hover {
+				background: rgba(0, 0, 0, 0.7);
+			}
+
+			.slider-prev {
+				left: 0;
+				border-radius: 0 3px 3px 0;
+			}
+
+			.slider-next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			.image-indicator {
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				gap: 8px;
+				z-index: 2;
+			}
+
+			.indicator-dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.5);
+				cursor: pointer;
+			}
+
+			.indicator-dot.active {
+				background: white;
 			}
 
 			.horse-info {
@@ -362,8 +437,8 @@
 					gap: 1.5rem;
 				}
 
-				.horse-image {
-					height: 300px;
+				.horse-image-container {
+					height: 250px;
 				}
 
 				.horse-info {
@@ -599,21 +674,38 @@
 					<h2 class="major">Our Horses</h2>
 					<div class="horse-grid">
 						<div class="horse-card">
-							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-image-container">
+								<div class="horse-image-slider">
+									<img src="images/pic01.jpg" alt="Horse photo" class="horse-image active">
+									<img src="images/pic02.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/pic03.jpg" alt="Horse photo" class="horse-image">
+								</div>
+								<button class="slider-arrow slider-prev">&#8249;</button>
+								<button class="slider-arrow slider-next">&#8250;</button>
+								<div class="image-indicator"></div>
+							</div>
 							<div class="horse-info">
 								<h3>Atorranta Z</h3>
 								<p class="horse-details">
 									<span class="detail-label">Breed:</span> Zangersheide&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<span class="detail-label">Registered:</span> ✓<br>
-									<span class="detail-label">Born:</span> 2009<br>
-									<span class="detail-label">Height:</span> 16.3 hands<br>
+									<span class="detail-label">Foaled:</span> 2009<br>
+									<span class="detail-label">Height:</span> 16.3 hands&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<span class="detail-label">Sex:</span> Mare
 								</p>
 								<p class="horse-bio">Usually plays with chase</p>
 							</div>
 						</div>
 						<div class="horse-card">
-							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-image-container">
+								<div class="horse-image-slider">
+									<img src="images/pic02.jpg" alt="Horse photo" class="horse-image active">
+									<img src="images/pic03.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/pic01.jpg" alt="Horse photo" class="horse-image">
+								</div>
+								<button class="slider-arrow slider-prev">&#8249;</button>
+								<button class="slider-arrow slider-next">&#8250;</button>
+								<div class="image-indicator"></div>
+							</div>
 							<div class="horse-info">
 								<h3>Adderonta</h3>
 								<p class="horse-details">
@@ -626,7 +718,16 @@
 							</div>
 						</div>
 						<div class="horse-card">
-							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-image-container">
+								<div class="horse-image-slider">
+									<img src="images/pic03.jpg" alt="Horse photo" class="horse-image active">
+									<img src="images/pic01.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/pic02.jpg" alt="Horse photo" class="horse-image">
+								</div>
+								<button class="slider-arrow slider-prev">&#8249;</button>
+								<button class="slider-arrow slider-next">&#8250;</button>
+								<div class="image-indicator"></div>
+							</div>
 							<div class="horse-info">
 								<h3>Zilla</h3>
 								<p class="horse-details">
@@ -639,7 +740,16 @@
 							</div>
 						</div>
 						<div class="horse-card">
-							<img src="images/pic02.jpg" alt="Horse Name" class="horse-image">
+							<div class="horse-image-container">
+								<div class="horse-image-slider">
+									<img src="images/pic01.jpg" alt="Horse photo" class="horse-image active">
+									<img src="images/pic02.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/pic03.jpg" alt="Horse photo" class="horse-image">
+								</div>
+								<button class="slider-arrow slider-prev">&#8249;</button>
+								<button class="slider-arrow slider-next">&#8250;</button>
+								<div class="image-indicator"></div>
+							</div>
 							<div class="horse-info">
 								<h3>Titainia +1</h3>
 								<p class="horse-details">
@@ -890,6 +1000,66 @@
 						loadPosts(searchTerm);
 					} else {
 						loadPosts();
+					}
+				}
+			});
+
+			// Add this to your existing script section
+			document.addEventListener('DOMContentLoaded', function() {
+				// Initialize all horse image sliders
+				document.querySelectorAll('.horse-image-slider').forEach(slider => {
+					initializeSlider(slider);
+				});
+
+				function initializeSlider(slider) {
+					const images = slider.querySelectorAll('.horse-image');
+					const container = slider.closest('.horse-image-container');
+					const prevBtn = container.querySelector('.slider-prev');
+					const nextBtn = container.querySelector('.slider-next');
+					const indicator = container.querySelector('.image-indicator');
+					let currentIndex = 0;
+
+					// Create indicator dots
+					images.forEach((_, index) => {
+						const dot = document.createElement('div');
+						dot.className = `indicator-dot ${index === 0 ? 'active' : ''}`;
+						dot.addEventListener('click', () => goToSlide(index));
+						indicator.appendChild(dot);
+					});
+
+					// Update active state
+					function updateSlider() {
+						images.forEach((img, index) => {
+							img.classList.toggle('active', index === currentIndex);
+							indicator.children[index].classList.toggle('active', index === currentIndex);
+						});
+					}
+
+					// Navigation functions
+					function goToSlide(index) {
+						currentIndex = index;
+						updateSlider();
+					}
+
+					function nextSlide() {
+						currentIndex = (currentIndex + 1) % images.length;
+						updateSlider();
+					}
+
+					function prevSlide() {
+						currentIndex = (currentIndex - 1 + images.length) % images.length;
+						updateSlider();
+					}
+
+					// Event listeners
+					prevBtn.addEventListener('click', prevSlide);
+					nextBtn.addEventListener('click', nextSlide);
+
+					// Hide arrows if only one image
+					if (images.length <= 1) {
+						prevBtn.style.display = 'none';
+						nextBtn.style.display = 'none';
+						indicator.style.display = 'none';
 					}
 				}
 			});
