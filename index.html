@@ -717,6 +717,33 @@
 					right: 10px;
 				}
 			}
+
+			.details-grid {
+				display: grid;
+				grid-template-columns: auto 1fr auto 1fr;
+				gap: 0.3rem 1rem;
+				align-items: baseline;
+				font-size: 0.85rem;
+				line-height: 1.4;
+			}
+
+			.detail-label {
+				color: rgba(255, 255, 255, 0.8);
+				font-weight: bold;
+				white-space: nowrap;
+			}
+
+			.detail-value {
+				color: rgba(255, 255, 255, 0.9);
+			}
+
+			/* For mobile screens, switch to 2 columns */
+			@media screen and (max-width: 480px) {
+				.details-grid {
+					grid-template-columns: auto 1fr;
+					font-size: 0.8rem;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -778,12 +805,20 @@
 							<div class="horse-info">
 								<h3>Atorranta Z</h3>
 								<p class="horse-details">
-									<span class="detail-label">Breed:</span> Zangersheide&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<span class="detail-label">Foaled:</span> 2009<br>
-									<span class="detail-label">Height:</span> 16.3 hands&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<span class="detail-label">Sex:</span> Mare <br>
-									<span class="detail-label">USEF #:</span> 5762782&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<span class="detail-label">Owner:</span> Carol Woodmansee
+									<div class="details-grid">
+										<span class="detail-label">Breed:</span>
+										<span class="detail-value">Zangersheide</span>
+										<span class="detail-label">Foaled:</span>
+										<span class="detail-value">2009</span>
+										<span class="detail-label">Height:</span>
+										<span class="detail-value">16.3 hands</span>
+										<span class="detail-label">Sex:</span>
+										<span class="detail-value">Mare</span>
+										<span class="detail-label">USEF #:</span>
+										<span class="detail-value">5762782</span>
+										<span class="detail-label">Owner:</span>
+										<span class="detail-value">Carol Woodmansee</span>
+									</div>
 								</p>
 								<p class="horse-bio">
 									Athletic as she is beautiful, Atorranta is a forward mare with a big stride.
@@ -807,14 +842,26 @@
 								<div class="image-indicator"></div>
 							</div>
 							<div class="horse-info">
-								<h3>Adderonta</h3>
+								<h3>Rubato Gold RSV</h3>
 								<p class="horse-details">
-									<span class="detail-label">Breed:</span> Slight Jerk<br>
-									<span class="detail-label">Age:</span> 8 years<br>
-									<span class="detail-label">Height:</span> 16 hands<br>
-									<span class="detail-label">Discipline:</span> Not really
+									<div class="details-grid">
+										<span class="detail-label">Breed:</span>
+										<span class="detail-value">KWPN (Dutch Warmblood)</span>
+										<span class="detail-label">Foaled:</span>
+										<span class="detail-value">2021</span>
+										<span class="detail-label">Height:</span>
+										<span class="detail-value">16 hands</span>
+										<span class="detail-label">Sex:</span>
+										<span class="detail-value">Mare</span>
+										<span class="detail-label">USEF #:</span>
+										<span class="detail-value">5723789</span>
+										<span class="detail-label">Owners:</span>
+										<span class="detail-value">Carly Miller & <br>Carol Woodmansee</span>
+									</div>
 								</p>
-								<p class="horse-bio">Kind of an a-hole</p>
+								<p class="horse-bio">
+									Kind of an a-hole
+								</p>
 							</div>
 						</div>
 						<div class="horse-card">
@@ -831,10 +878,16 @@
 							<div class="horse-info">
 								<h3>Zilla</h3>
 								<p class="horse-details">
-									<span class="detail-label">Breed:</span> Complete Jerk<br>
-									<span class="detail-label">Age:</span> 8 years<br>
-									<span class="detail-label">Height:</span> 16 hands<br>
-									<span class="detail-label">Discipline:</span> None.
+									<div class="details-grid">
+										<span class="detail-label">Breed:</span>
+										<span class="detail-value">Complete Jerk</span>
+										<span class="detail-label">Age:</span>
+										<span class="detail-value">8 years</span>
+										<span class="detail-label">Height:</span>
+										<span class="detail-value">16 hands</span>
+										<span class="detail-label">Discipline:</span>
+										<span class="detail-value">None</span>
+									</div>
 								</p>
 								<p class="horse-bio">Do not get within 10 feet.</p>
 							</div>
@@ -853,10 +906,16 @@
 							<div class="horse-info">
 								<h3>Titainia +1</h3>
 								<p class="horse-details">
-									<span class="detail-label">Breed:</span> Really pregnant<br>
-									<span class="detail-label">Age:</span> 8 years<br>
-									<span class="detail-label">Height:</span> 16 hands<br>
-									<span class="detail-label">Discipline:</span> Food
+									<div class="details-grid">
+										<span class="detail-label">Breed:</span>
+										<span class="detail-value">Really pregnant</span>
+										<span class="detail-label">Age:</span>
+										<span class="detail-value">8 years</span>
+										<span class="detail-label">Height:</span>
+										<span class="detail-value">16 hands</span>
+										<span class="detail-label">Discipline:</span>
+										<span class="detail-value">Food</span>
+									</div>
 								</p>
 								<p class="horse-bio">It's pregnant horse, idk</p>
 							</div>
