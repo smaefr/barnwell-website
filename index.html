@@ -342,10 +342,13 @@
 				object-fit: cover;
 				opacity: 0;
 				transition: opacity 0.3s ease-in-out;
+				cursor: pointer;
+				z-index: 1;
 			}
 
 			.horse-image.active {
 				opacity: 1;
+				z-index: 2;
 			}
 
 			.slider-arrow {
@@ -666,10 +669,6 @@
 				cursor: pointer;
 			}
 
-			.horse-image {
-				cursor: pointer;
-			}
-
 			.lightbox-arrow {
 				position: absolute;
 				top: 50%;
@@ -833,9 +832,15 @@
 						<div class="horse-card">
 							<div class="horse-image-container">
 								<div class="horse-image-slider">
-									<img src="images/pic02.jpg" alt="Horse photo" class="horse-image active">
-									<img src="images/pic03.jpg" alt="Horse photo" class="horse-image">
-									<img src="images/pic01.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_01.jpg" alt="Horse photo" class="horse-image active">
+									<img src="images/ruby/ruby_02.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_03.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_04.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_05.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_06.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_07.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_08.jpg" alt="Horse photo" class="horse-image">
+									<img src="images/ruby/ruby_09.jpg" alt="Horse photo" class="horse-image">
 								</div>
 								<button class="slider-arrow slider-prev">&#8249;</button>
 								<button class="slider-arrow slider-next">&#8250;</button>
@@ -1245,10 +1250,14 @@
 				// Add click event to all horse images
 				document.querySelectorAll('.horse-image').forEach(img => {
 					img.addEventListener('click', function(e) {
+						e.preventDefault();
 						e.stopPropagation();
+						
 						currentSlider = this.closest('.horse-image-slider');
-						currentIndex = Array.from(currentSlider.children).indexOf(this);
-						updateLightboxImage();
+						currentIndex = Array.from(currentSlider.querySelectorAll('.horse-image')).indexOf(this);
+						
+						// Update lightbox with clicked image
+						lightboxImg.src = this.src;
 						lightbox.classList.add('active');
 					});
 				});
@@ -1293,7 +1302,6 @@
 						prevImage();
 					} else if (e.key === 'Escape') {
 						e.preventDefault();
-						e.stopPropagation();
 						lightbox.classList.remove('active');
 					}
 				});
@@ -1306,9 +1314,9 @@
 				});
 
 				lightbox.addEventListener('click', (e) => {
-					e.preventDefault();
-					e.stopPropagation();
 					if (e.target === lightbox) {
+						e.preventDefault();
+						e.stopPropagation();
 						lightbox.classList.remove('active');
 					}
 				});
