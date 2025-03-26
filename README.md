@@ -116,7 +116,7 @@ The blog functionality uses a custom API endpoint:
 
 ## License
 
-This project is proprietary and maintained by ADM Technology. All rights reserved.
+See the LICENSE file
 
 ## Credits
 
