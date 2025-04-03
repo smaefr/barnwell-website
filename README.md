@@ -122,7 +122,6 @@ See the LICENSE file
 
 - Website development by [ADM Technology](https://admtech.org)
 - Horse photography provided by Barnwell
-- Icons and design elements: [Attribution if applicable]
 
 ## Contact
 
